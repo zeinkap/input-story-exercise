@@ -10,6 +10,10 @@ var pContent = document.querySelector('#addContent');
 
 inputBtn.addEventListener('click', userStory);
 
+if (userNoun && userAdj && userVerb && userVerb && userNum) {
+  console.log("They exist");
+}
+
 function userStory() {
   var userWordNoun = userNoun.value;
   var userWordAdj = userAdj.value;
