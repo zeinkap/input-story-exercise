@@ -3,32 +3,22 @@
 var userNoun = document.querySelector('#user-input-noun');
 var userAdj = document.querySelector('#user-input-adj');
 var userVerb = document.querySelector('#user-input-verb');
+var userNum = document.querySelector('#user-input-num');
 
-var nounBtn = document.querySelector('#noun-btn');
-var adjBtn = document.querySelector('#adj-btn');
-var verbBtn = document.querySelector('#verb-btn');
+var inputBtn = document.querySelector('#input-btn');
+var pContent = document.querySelector('#addContent');
 
-nounBtn.addEventListener('click', askUser);
-adjBtn.addEventListener('click', askUser2);
-verbBtn.addEventListener('click', askUser3);
+inputBtn.addEventListener('click', userStory);
 
-function askUser() {
-  var user = prompt("Enter a noun please.");
-  // capture user's prompt and store it as a variable
-  var userWord = user;
-  userWord += userNoun.value = user;
-}
+function userStory() {
+  var userWordNoun = userNoun.value;
+  var userWordAdj = userAdj.value;
+  var userWordVerb = userVerb.value;
+  var userWordNum = userNum.value;
 
-function askUser2() {
-  var user = prompt("Enter a adjective please.");
-  // capture user's prompt and store it as a variable
-  var userWord = user;
-  userWord += userAdj.value = user;
-}
-
-function askUser3() {
-  var user = prompt("Enter a verb please.");
-  // capture user's prompt and store it as a variable
-  var userWord = user;
-  userWord += userVerb.value = user;
+  var outputMsg = "There once was a " + userWordNoun;
+  outputMsg += " who was very " + userWordAdj;
+  outputMsg += " who really liked to " + userWordVerb + ".";
+  outputMsg += " He lived to be " + userWordNum + " years old";
+  pContent.textContent = outputMsg;
 }
